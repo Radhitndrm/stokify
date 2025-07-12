@@ -47,6 +47,11 @@ class User extends Authenticatable
         return $this->belongsTo(Supplier::class);
     }
 
+    public function order_details()
+    {
+        return $this->hasMany(OrderDetail::class);
+    }
+
     public function getUserPermission()
     {
         return $this->getAllPermissions()->mapWithKeys(fn($permission) => [$permission['name'] => True]);

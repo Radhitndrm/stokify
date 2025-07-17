@@ -8,4 +8,9 @@ class Unit extends Model
 {
     //
     protected $guarded = ['id'];
+
+    public function scopeSearch($query)
+    {
+        return $this->when('search', fn($query) => $query->where('name', 'like', '%' . request('search') . '%'));
+    }
 }

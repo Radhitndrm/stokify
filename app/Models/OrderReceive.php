@@ -9,7 +9,7 @@ class OrderReceive extends Model
     //
     protected $guarded = ['id'];
 
-    public function scopeSearch()
+    public function scopeSearch($query)
     {
         return $this->when(request('search'), fn($query) => $query->where('receive_code', 'like', '%' . request('search') . '%'));
     }

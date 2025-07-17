@@ -20,7 +20,7 @@ class Order extends Model
         return $this->where('status', 'success');
     }
 
-    public function scopeSearch()
+    public function scopeSearch($query)
     {
         return $this->when(request('search'), fn($query) => $query->where('order_code', 'like', '%' . request('search') . '%'))
             ->when(request('supplier') && request('supplier') !== 'all', fn($query) => $query->where('supplier_id', request('supplier')));

@@ -42,21 +42,6 @@ class User extends Authenticatable
         ];
     }
 
-    public function supplier()
-    {
-        return $this->belongsTo(Supplier::class);
-    }
-
-    public function order_details()
-    {
-        return $this->hasMany(OrderDetail::class);
-    }
-
-    public function order_receives()
-    {
-        return $this->hasMany(OrderReceive::class);
-    }
-
     public function getUserPermission()
     {
         return $this->getAllPermissions()->mapWithKeys(fn($permission) => [$permission['name'] => True]);

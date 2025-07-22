@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('sale_details', function (Blueprint $table) {
             $table->id();
             $table->foreignId('sale_id')->constrained('sales');
-            $table->foreignId('product_unit_id')->constrained('product');
+            $table->foreignId('product_unit_id')->constrained('product_units');
             $table->double('quantity');
             $table->double('price');
             $table->timestamps();

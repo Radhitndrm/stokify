@@ -24,5 +24,5 @@ export function SideStat({ url, setOpenMobile }: sideStatProps) {
                 </SidebarMenu>
             </SidebarGroupContent>
         </SidebarGroup>
-    )
+    );
 }

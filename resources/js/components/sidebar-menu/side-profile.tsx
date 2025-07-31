@@ -22,8 +22,14 @@ export function SideProfile() {
                                     alt={auth.user.name}
                                 />
                             </Avatar>
+                            <div className="grid flex-1 text-left text-sm leading-light">
+                                <span className="truncate font-semibold">{auth.user.name}</span>
+                                <span className="truncate text-xs">{auth.user.email}</span>
+                            </div>
+                            <ChevronsUpDown className="ml-auto size-4" />
                         </SidebarMenuButton>
                     </DropdownMenuTrigger>
+
                 </DropdownMenu>
             </SidebarMenuItem>
         </SidebarMenu>

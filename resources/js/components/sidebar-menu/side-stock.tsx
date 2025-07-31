@@ -38,5 +38,5 @@ export function SideStock({ url, setOpenMobile }: sideStockProps) {
                 </SidebarMenu>
             </SidebarGroupContent>
         </SidebarGroup>
-    )
+    );
 }

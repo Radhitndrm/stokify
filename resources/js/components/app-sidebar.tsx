@@ -34,27 +34,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarFooter>
             <SidebarRail />
         </Sidebar>
-    ); return (
-        <Sidebar collapsible="icon" {...props}>
-            <SidebarHeader className="border-b group-data-[collapsible=icon]:h-12 h-14 flex items-center justify-center dark:bg-gray-950">
-                <h1 className="text-xl group-data-[collapsible=icon]:hidden">
-                    Inventory
-                </h1>
-                <Store className="group-data-[collapsible=icon]:inline-flex hidden size-5" />
-            </SidebarHeader>
-            <SidebarContent className="dark:bg-gray-950 scrollbar-hide">
-                <SideStat url={url} setOpenMobile={setOpenMobile} />
-                <SideMaster url={url} setOpenMobile={setOpenMobile} />
-                <SideTransaction url={url} setOpenMobile={setOpenMobile} />
-                <SideStock url={url} setOpenMobile={setOpenMobile} />
-                <SideReport url={url} setOpenMobile={setOpenMobile} />
-                <SideUserManagement url={url} setOpenMobile={setOpenMobile} />
-            </SidebarContent>
-            <SidebarFooter className="border-t dark:bg-gray-950">
-                <SideProfile />
-            </SidebarFooter>
-            <SidebarRail />
-        </Sidebar>
     );
+
 }
 

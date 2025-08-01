@@ -94,6 +94,6 @@ export function SideProfile() {
                 </DropdownMenu>
             </SidebarMenuItem>
         </SidebarMenu>
-    )
+    );
 }
 

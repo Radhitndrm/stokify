@@ -73,5 +73,5 @@ export function SideReport({ url, setOpenMobile }: sideReportProps) {
                 </SidebarMenu>
             </SidebarGroupContent>
         </SidebarGroup >
-    )
+    );
 }

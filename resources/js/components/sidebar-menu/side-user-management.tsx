@@ -47,5 +47,5 @@ export function SideUserManagement({ url, setOpenMobile }: sideUserManegementPro
                 </SidebarMenu>
             </SidebarGroupContent>
         </SidebarGroup>
-    )
+    );
 }

@@ -38,8 +38,34 @@ export function ActionButton({
                 <DropdownMenuLabel>Aksi</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 {children}
-                {withDetail && hasAnyPermission()}
+                {withDetail && hasAnyPermission([`${permissionPrefix}-show`]) && (
+                    <DropdownMenuItem asChild>
+                        <Link href={actionDetailHref}>
+                            <CircleArrowRight /> Detail
+                        </Link>
+                    </DropdownMenuItem>
+                )}
+                {isModal ? (
+                    withEdit && hasAnyPermission([`${permissionPrefix}-update`]) && (
+                        <DropdownMenuItem asChild onClick={actionEdit}>
+                            <Edit /> Ubah
+                        </DropdownMenuItem>
+                    )
+                ) : (
+                    withEdit && hasAnyPermission([`${permissionPrefix}-update`]) && (
+                        <DropdownMenuItem asChild>
+                            <Link href={actionEditHref}>
+                                <Edit /> Ubah
+                            </Link>
+                        </DropdownMenuItem>
+                    )
+                )}
+                {withDelete && hasAnyPermission([`${permissionPrefix}-delete`]) && (
+                    <DropdownMenuItem onClick={actionDelete}>
+                        <Trash /> Hapus
+                    </DropdownMenuItem>
+                )}
             </DropdownMenuContent>
         </DropdownMenu>
-    )
+    );
 }

@@ -15,6 +15,7 @@ export default function DatePicker({ date, setDate, label }: DatePickerProps) {
     const handleDataChange = (selectedDate: Date | undefined) => {
         if (selectedDate) {
             const formattedDate = format(selectedDate, "yyyy-MM-dd");
+            setDate(formattedDate);
         }
     };
 

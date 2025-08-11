@@ -14,8 +14,8 @@ export function SideStat({ url, setOpenMobile }: sideStatProps) {
             <SidebarGroupContent>
                 <SidebarMenu>
                     <SidebarMenuItem>
-                        <SidebarMenuButton asChild tooltip={"Dashboard"}>
-                            <Link href='' onClick={() => setOpenMobile(false)}>
+                        <SidebarMenuButton asChild tooltip={"Dashboard"} isActive={url === '/apps/dashboard'}>
+                            <Link href={route('apps.dashboard')} onClick={() => setOpenMobile(false)}>
                                 <ChartNoAxesCombined />
                                 <span>Dashboard</span>
                             </Link>

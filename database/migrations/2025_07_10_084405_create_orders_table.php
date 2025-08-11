@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('order_code');
             $table->foreignId('supplier_id')->constrained('suppliers');
             $table->date('order_date');
-            $table->double('total_ammount');
+            $table->double('total_amount');
             $table->enum('status', ['pending', 'success', 'cancel']);
             $table->timestamps();
             $table->foreignId('created_by')->constrained('users');

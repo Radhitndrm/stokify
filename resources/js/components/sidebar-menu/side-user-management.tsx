@@ -21,6 +21,7 @@ export function SideUserManagement({ url, setOpenMobile }: sideUserManegementPro
                         <SidebarMenuItem>
                             <SidebarMenuButton asChild tooltip={"Hak Akses"}>
                                 <Link href='' onClick={() => setOpenMobile(false)}>
+                                    <Users2 />
                                     <span>Hak Akses</span>
                                 </Link>
                             </SidebarMenuButton>
@@ -30,6 +31,7 @@ export function SideUserManagement({ url, setOpenMobile }: sideUserManegementPro
                         <SidebarMenuItem>
                             <SidebarMenuButton asChild tooltip={"Akses Group"}>
                                 <Link href='' onClick={() => setOpenMobile(false)}>
+                                    <UserCog />
                                     <span>Akses Group</span>
                                 </Link>
                             </SidebarMenuButton>
@@ -39,6 +41,7 @@ export function SideUserManagement({ url, setOpenMobile }: sideUserManegementPro
                         <SidebarMenuItem>
                             <SidebarMenuButton asChild tooltip={"Pengguna"}>
                                 <Link href='' onClick={() => setOpenMobile(false)}>
+                                    <UserRoundCheck />
                                     <span>Pengguna</span>
                                 </Link>
                             </SidebarMenuButton>

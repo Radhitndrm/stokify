@@ -20,6 +20,7 @@ export function SideReport({ url, setOpenMobile }: sideReportProps) {
                         <SidebarMenuItem>
                             <SidebarMenuButton asChild tooltip={"Laporan Kartu Stok"}>
                                 <Link href='' onClick={() => setOpenMobile(false)}>
+                                    <FileBox />
                                     <span>Laporan Kartu Stok</span>
                                 </Link>
                             </SidebarMenuButton>
@@ -29,6 +30,7 @@ export function SideReport({ url, setOpenMobile }: sideReportProps) {
                         <SidebarMenuItem>
                             <SidebarMenuButton asChild tooltip={"Laporan Sisa Stock"}>
                                 <Link href='' onClick={() => setOpenMobile(false)}>
+                                    <FileChartColumn />
                                     <span>Laporan Sisa Stock</span>
                                 </Link>
                             </SidebarMenuButton>
@@ -38,6 +40,7 @@ export function SideReport({ url, setOpenMobile }: sideReportProps) {
                         <SidebarMenuItem>
                             <SidebarMenuButton asChild tooltip={"Laporan Pembelian"}>
                                 <Link href='' onClick={() => setOpenMobile(false)}>
+                                    <FileChartPie />
                                     <span>Laporan Pembelian</span>
                                 </Link>
                             </SidebarMenuButton>
@@ -47,6 +50,7 @@ export function SideReport({ url, setOpenMobile }: sideReportProps) {
                         <SidebarMenuItem>
                             <SidebarMenuButton asChild tooltip={"Laporan Pembelian belum diterima"}>
                                 <Link href='' onClick={() => setOpenMobile(false)}>
+                                    <FileSliders />
                                     <span>Pembelian Belum Diterima</span>
                                 </Link>
                             </SidebarMenuButton>
@@ -56,6 +60,7 @@ export function SideReport({ url, setOpenMobile }: sideReportProps) {
                         <SidebarMenuItem>
                             <SidebarMenuButton asChild tooltip={"Laporan Penjualan"}>
                                 <Link href='' onClick={() => setOpenMobile(false)}>
+                                    <FileText />
                                     <span>Laporan Penjualan</span>
                                 </Link>
                             </SidebarMenuButton>
@@ -65,6 +70,7 @@ export function SideReport({ url, setOpenMobile }: sideReportProps) {
                         <SidebarMenuItem>
                             <SidebarMenuButton asChild tooltip={"Laporan Produk Terlaris"}>
                                 <Link href='' onClick={() => setOpenMobile(false)}>
+                                    <FileX2 />
                                     <span>Laporan Produk Terlaris</span>
                                 </Link>
                             </SidebarMenuButton>

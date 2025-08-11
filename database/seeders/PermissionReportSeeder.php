@@ -16,7 +16,7 @@ class PermissionReportSeeder extends Seeder
             'report-card-stocks',
             'report-stocks',
             'report-orders',
-            'report-pending-over-receives',
+            'report-pending-order-receives',
             'report-sales',
             'report-best-selling-products',
         ])->each(fn($permission) => Permission::create(['name' => $permission]));

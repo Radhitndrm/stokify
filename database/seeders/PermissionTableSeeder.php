@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class PermissionTableSeeder extends Seeder
 {
@@ -14,24 +14,29 @@ class PermissionTableSeeder extends Seeder
      */
     public function run(): void
     {
-        //
         collect([
-            'permission-data',
-            'permission-create',
-            'permission-update',
-            'permission-delete',
-        ])->each(fn($permission) => Permission::create(['name' => $permission]));
+            'permissions-data',
+            'permissions-create',
+            'permissions-update',
+            'permissions-delete',
+        ])->each(function ($permission) {
+            Permission::create([
+                'name' => $permission,
+            ]);
+        });
 
         collect([
             'permissions-full-access',
-        ])->each(function ($roleName) {
-            $role = Role::create(['name' => $roleName]);
-            $role->givePermissionTo([
+        ])->each(function ($role) {
+            $role = Role::create([
+                'name' => $role
+            ]);
 
-                'permission-data',
-                'permission-create',
-                'permission-update',
-                'permission-delete',
+            $role->givePermissionTo([
+                'permissions-data',
+                'permissions-create',
+                'permissions-update',
+                'permissions-delete',
             ]);
         });
     }

@@ -29,21 +29,6 @@ class DatabaseSeeder extends Seeder
             PermissionUserSeeder::class,
             RoleTableSeeder::class,
             UserTableSeeder::class,
-            PermissionTableSeeder::class,
-            PermissionCategorySeeder::class,
-            PermissionOrderReceiveSeeder::class,
-            PermissionOrderSeeder::class,
-            PermissionProductSeeder::class,
-            PermissionProductVariantSeeder::class,
-            PermissionReportSeeder::class,
-            PermissionRoleSeeder::class,
-            PermissionSaleSeeder::class,
-            PermissionStockSeeder::class,
-            PermissionSupplierSeeder::class,
-            PermissionUnitSeeder::class,
-            PermissionUserSeeder::class,
-            RoleTableSeeder::class,
-            UserTableSeeder::class,
         ]);
     }
 }

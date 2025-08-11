@@ -38,8 +38,8 @@ class PermissionProductVariantSeeder extends Seeder
                 ]);
             } else {
                 $role->givePermissionTo([
-                    'product-varian-data',
-                    'product-varian-show',
+                    'product-variant-data',
+                    'product-variant-show',
                 ]);
             }
         });

@@ -9,12 +9,12 @@ export function AppNavbar() {
     const BreadCrumbItems = [
         {
             name: 'Stats',
-            isActive: url === '',
+            isActive: url === '/apps/dashboard',
             subItems: [
                 {
                     name: 'Dashboard',
-                    isActive: url === '',
-                    href: ''
+                    isActive: url === '/apps/dashboard',
+                    href: route('apps.dashboard')
                 }
             ],
         },

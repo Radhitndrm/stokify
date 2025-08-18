@@ -1,11 +1,18 @@
 import React from "react";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuItem } from "./ui/dropdown-menu";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuTrigger,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuItem
+} from "@/components/ui/dropdown-menu";
+import { Ellipsis, Edit, Trash, CircleArrowRight } from "lucide-react";
 import { Link } from "@inertiajs/react";
 import hasAnyPermission from "@/utils/has-permission";
-import { Ellipsis, Edit, Trash, CircleArrowRight } from "lucide-react";
 
-export interface ActionButtonProps {
-    isModal: boolean;
+interface ActionButtonProps {
+    isModal?: boolean;
     withEdit?: boolean;
     withDetail?: boolean;
     withDelete?: boolean;
@@ -14,7 +21,7 @@ export interface ActionButtonProps {
     actionEditHref?: string;
     actionDetailHref?: string;
     permissionPrefix: string;
-    children: React.ReactNode;
+    children?: React.ReactNode
 }
 
 export function ActionButton({
@@ -27,8 +34,9 @@ export function ActionButton({
     actionEditHref = '',
     actionDelete,
     permissionPrefix,
-    children,
+    children
 }: ActionButtonProps) {
+
     return (
         <DropdownMenu>
             <DropdownMenuTrigger className="focus-within:outline-none">
@@ -45,9 +53,10 @@ export function ActionButton({
                         </Link>
                     </DropdownMenuItem>
                 )}
+
                 {isModal ? (
                     withEdit && hasAnyPermission([`${permissionPrefix}-update`]) && (
-                        <DropdownMenuItem asChild onClick={actionEdit}>
+                        <DropdownMenuItem onClick={actionEdit}>
                             <Edit /> Ubah
                         </DropdownMenuItem>
                     )
@@ -59,12 +68,16 @@ export function ActionButton({
                             </Link>
                         </DropdownMenuItem>
                     )
-                )}
-                {withDelete && hasAnyPermission([`${permissionPrefix}-delete`]) && (
-                    <DropdownMenuItem onClick={actionDelete}>
-                        <Trash /> Hapus
-                    </DropdownMenuItem>
-                )}
+                )
+                }
+
+                {withDelete &&
+                    hasAnyPermission([`${permissionPrefix}-delete`]) && (
+                        <DropdownMenuItem onClick={actionDelete}>
+                            <Trash /> Hapus
+                        </DropdownMenuItem>
+                    )
+                }
             </DropdownMenuContent>
         </DropdownMenu>
     );

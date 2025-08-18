@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Apps\DashboardController;
+use App\Http\Controllers\Apps\PermissionController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -10,8 +11,11 @@ Route::get('/', function () {
     return inertia('auth/login');
 });
 
+
 Route::group(['prefix' => 'apps', 'as' => 'apps.', 'middleware' => ['auth']], function () {
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
+
+    Route::resource('permissions', PermissionController::class)->except(['create', 'edit', 'show']);
 });
 
 require __DIR__ . '/auth.php';

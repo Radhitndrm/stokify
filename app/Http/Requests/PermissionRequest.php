@@ -21,16 +21,25 @@ class PermissionRequest extends FormRequest
      */
     public function rules(): array
     {
-            $method = $this->method();
+        $method = $this->method();
 
         if ($method === 'POST')
             $validate = [
                 'name' => 'required|string|max:225|unique:permissions',
             ];
-            elseif ($method === 'PUT')
-        $validate = [
-            'name' => 'required|string|max:225|unique:permissions.name,' . $this->permission->id,
+        elseif ($method === 'PUT')
+            $validate = [
+                'name' => 'required|string|max:225|unique:permissions.name,' . $this->permission->id,
+            ];
+        return $validate;
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Kolom nama hak akses tidak boleh kosong',
+            'name.string' => 'Kolom nama hak akses harus berupa huruf',
+            'name.unique' => 'Nama hak akses sudah ada, silahkan gunakan nama lain'
         ];
-        return $validate
     }
 }

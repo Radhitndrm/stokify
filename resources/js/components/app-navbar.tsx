@@ -62,12 +62,12 @@ export function AppNavbar() {
         },
         {
             name: 'Manajemen Stok',
-            isActive: '',
+            isActive: url.startsWith('/apps/permissions'),
             subItems: [
                 {
                     name: 'Hak Akses',
-                    isActive: '',
-                    href: '',
+                    isActive: url.startsWith('/apps/permissions'),
+                    href: route('apps.permissions.index'),
                 },
                 {
                     name: 'Penerimaan Pembelian',

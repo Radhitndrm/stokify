@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Apps\DashboardController;
 use App\Http\Controllers\Apps\PermissionController;
+use App\Http\Controllers\Apps\RoleController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -16,6 +17,9 @@ Route::group(['prefix' => 'apps', 'as' => 'apps.', 'middleware' => ['auth']], fu
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
 
     Route::resource('permissions', PermissionController::class)->except(['create', 'edit', 'show']);
+
+    Route::resource('roles', RoleController::class)->except('show');
 });
+
 
 require __DIR__ . '/auth.php';

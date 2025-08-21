@@ -29,8 +29,8 @@ export function SideUserManagement({ url, setOpenMobile }: sideUserManegementPro
                     )}
                     {hasAnyPermission(['roles-data']) && (
                         <SidebarMenuItem>
-                            <SidebarMenuButton asChild tooltip={"Akses Group"}>
-                                <Link href='' onClick={() => setOpenMobile(false)}>
+                            <SidebarMenuButton asChild tooltip={"Akses Group"} isActive={url.startsWith('/apps/roles')}>
+                                <Link href={route('apps.roles.index')} onClick={() => setOpenMobile(false)}>
                                     <UserCog />
                                     <span>Akses Group</span>
                                 </Link>

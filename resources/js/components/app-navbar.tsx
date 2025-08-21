@@ -1,12 +1,15 @@
-import React from "react";
-import { SidebarTrigger } from "./ui/sidebar";
-import { Separator } from "./ui/separator";
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "./ui/breadcrumb";
-import { usePage, Link } from "@inertiajs/react";
+
+import React from 'react'
+import { SidebarTrigger } from '@/components/ui/sidebar'
+import { Separator } from '@/components/ui/separator'
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
+import { usePage, Link } from '@inertiajs/react'
 export function AppNavbar() {
+
+    // destructuring the usePage hook from Inertia
     const { url } = usePage();
 
-    const BreadCrumbItems = [
+    const BreadcrumbItems = [
         {
             name: 'Stats',
             isActive: url === '/apps/dashboard',
@@ -30,17 +33,17 @@ export function AppNavbar() {
                 {
                     name: 'Kategori',
                     isActive: '',
-                    href: '',
+                    href: ''
                 },
                 {
                     name: 'Supplier',
                     isActive: '',
-                    href: '',
+                    href: ''
                 },
                 {
                     name: 'Produk',
                     isActive: '',
-                    href: '',
+                    href: ''
                 }
             ],
         },
@@ -51,50 +54,50 @@ export function AppNavbar() {
                 {
                     name: 'Pembelian',
                     isActive: '',
-                    href: '',
+                    href: ''
                 },
                 {
                     name: 'Penjualan',
                     isActive: '',
-                    href: '',
+                    href: ''
                 },
             ],
         },
         {
             name: 'Manajemen Stok',
-            isActive: url.startsWith('/apps/permissions'),
+            isActive: '',
             subItems: [
                 {
-                    name: 'Hak Akses',
-                    isActive: url.startsWith('/apps/permissions'),
-                    href: route('apps.permissions.index'),
+                    name: 'Stok Awal',
+                    isActive: '',
+                    href: ''
                 },
                 {
                     name: 'Penerimaan Pembelian',
                     isActive: '',
-                    href: '',
+                    href: ''
                 },
             ],
         },
         {
             name: 'Manajemen Pengguna',
-            isActive: '',
+            isActive: url.startsWith('/apps/permissions'),
             subItems: [
                 {
                     name: 'Hak Akses',
-                    isActive: '',
-                    href: '',
+                    isActive: url.startsWith('/apps/permissions'),
+                    href: route('apps.permissions.index')
                 },
                 {
                     name: 'Akses Group',
-                    isActive: '',
-                    href: '',
+                    isActive: url.startsWith('/apps/roles'),
+                    href: route('apps.roles.index')
                 },
                 {
                     name: 'Pengguna',
                     isActive: '',
-                    href: '',
-                },
+                    href: ''
+                }
             ],
         },
         {
@@ -104,43 +107,44 @@ export function AppNavbar() {
                 {
                     name: 'Kartu Stok',
                     isActive: '',
-                    href: '',
+                    href: ''
                 },
                 {
                     name: 'Sisa Stok',
                     isActive: '',
-                    href: '',
+                    href: ''
                 },
                 {
                     name: 'Pembelian',
                     isActive: '',
-                    href: '',
+                    href: ''
                 },
                 {
                     name: 'Pembelian Belum Diterima',
                     isActive: '',
-                    href: '',
+                    href: ''
                 },
                 {
                     name: 'Penjualan',
                     isActive: '',
-                    href: '',
+                    href: ''
                 },
                 {
                     name: 'Produk Terlaris',
                     isActive: '',
-                    href: '',
+                    href: ''
                 },
             ],
         }
     ];
+
     return (
         <div className="flex items-center gap-2 px-4 w-full">
             <SidebarTrigger className="-ml-1" />
             <Separator orientation="vertical" className="mr-2 h-4" />
             <Breadcrumb>
                 <BreadcrumbList>
-                    {BreadCrumbItems.map((item, index) => (
+                    {BreadcrumbItems.map((item, index) => (
                         item.isActive && item.subItems.find(subItem => subItem.isActive) && (
                             <React.Fragment key={index}>
                                 <BreadcrumbItem>
@@ -149,7 +153,8 @@ export function AppNavbar() {
                                     </BreadcrumbLink>
                                 </BreadcrumbItem>
                                 <BreadcrumbSeparator />
-                                {item.subItems.filter(subItem => subItem.isActive)
+                                {item.subItems
+                                    .filter(subItem => subItem.isActive)
                                     .map((subItem, subIndex) => (
                                         <BreadcrumbItem key={subIndex}>
                                             <BreadcrumbLink asChild>
@@ -166,3 +171,4 @@ export function AppNavbar() {
         </div>
     )
 }
+

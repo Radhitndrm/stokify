@@ -38,6 +38,12 @@ class RoleController extends Controller
             ->when($request->search, fn($search) => $search->where('name', 'like', '%' . $request->search . '%'))
             ->latest()
             ->paginate($perPage, ['*'], 'page', $currentPage)->withQueryString();
+
+        return inertia('apps/roles/index', [
+            'roles' => $roles,
+            'currentPage' => $currentPage,
+            'perPage' => $perPage
+        ]);
     }
 
 

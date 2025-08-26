@@ -29,7 +29,7 @@ class PermissionRequest extends FormRequest
             ];
         elseif ($method === 'PUT')
             $validate = [
-                'name' => 'required|string|max:225|unique:permissions.name,' . $this->permission->id,
+                'name' => 'required|string|max:225|unique:permissions,name,' . $this->permission->id,
             ];
         return $validate;
     }

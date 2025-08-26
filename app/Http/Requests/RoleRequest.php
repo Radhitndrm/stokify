@@ -30,7 +30,7 @@ class RoleRequest extends FormRequest
             ];
         elseif ($method === 'PUT')
             $validate = [
-                'name' => 'required|string|max:255|unique:roles' . $this->role->id,
+                'name' => 'required|string|max:255|unique:roles,name,' . $this->role->id,
                 'selectedPermissions' => 'required|array|min:1'
             ];
         return $validate;

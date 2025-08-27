@@ -95,8 +95,8 @@ export function AppNavbar() {
                 },
                 {
                     name: 'Pengguna',
-                    isActive: '',
-                    href: ''
+                    isActive: url.startsWith('apps/users'),
+                    href: route('apps.users.index')
                 }
             ],
         },

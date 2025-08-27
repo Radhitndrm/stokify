@@ -34,7 +34,7 @@ class PermissionRequest extends FormRequest
         return $validate;
     }
 
-    public function messages()
+    public function messages(): array
     {
         return [
             'name.required' => 'Kolom nama hak akses tidak boleh kosong',

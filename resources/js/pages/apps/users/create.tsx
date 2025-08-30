@@ -31,7 +31,6 @@ export default function Create() {
         selectedRoles: [] as string[],
     });
 
-    // ✅ handler per role
     const selectedRole = (checked: boolean, roleName: string) => {
         let roleIds = data.selectedRoles;
         if (checked) {
@@ -42,7 +41,6 @@ export default function Create() {
         setData('selectedRoles', roleIds);
     }
 
-    // ✅ handler select all
     const selectAllRole = (checked: boolean) => {
         const roleIds = roles.map(role => role.name);
         setData('selectedRoles', checked ? roleIds : []);

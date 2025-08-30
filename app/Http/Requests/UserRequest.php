@@ -29,7 +29,7 @@ class UserRequest extends FormRequest
                 'name' => 'required|string|max:255',
                 'email' => 'required|email|unique:users',
                 'password' => 'required|min:4|confirmed',
-                'seletedRoles' => 'required|array|min:1',
+                'selectedRoles' => 'required|array|min:1',
             ];
         elseif ($method === 'PUT')
             $validate = [

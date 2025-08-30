@@ -79,8 +79,7 @@ class UserController extends Controller implements HasMiddleware
      */
     public function store(UserRequest $request)
     {
-        // create new user data
-        $user = User::create([
+        $user = User::query()->create([
             'name' => $request->name,
             'username' => $request->username,
             'email' => $request->email,

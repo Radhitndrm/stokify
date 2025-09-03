@@ -23,12 +23,12 @@ export function AppNavbar() {
         },
         {
             name: 'Master Data',
-            isActive: '',
+            isActive: url.startsWith('/apps/units'),
             subItems: [
                 {
                     name: 'Satuan',
-                    isActive: '',
-                    href: '',
+                    isActive: url.startsWith('/apps/units'),
+                    href: route('apps.units.index'),
                 },
                 {
                     name: 'Kategori',

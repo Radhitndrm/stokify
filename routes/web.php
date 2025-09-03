@@ -3,6 +3,7 @@
 use App\Http\Controllers\Apps\DashboardController;
 use App\Http\Controllers\Apps\PermissionController;
 use App\Http\Controllers\Apps\RoleController;
+use App\Http\Controllers\Apps\UnitController;
 use App\Http\Controllers\Apps\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,8 @@ Route::group(['prefix' => 'apps', 'as' => 'apps.', 'middleware' => ['auth']], fu
     Route::resource('roles', RoleController::class)->except('show');
 
     Route::resource('users', UserController::class);
+
+    Route::resource('units', UnitController::class)->except('show');
 });
 
 

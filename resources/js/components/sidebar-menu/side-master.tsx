@@ -19,8 +19,8 @@ export function SideMaster({ url, setOpenMobile }: sideMasterProps) {
                 <SidebarMenu>
                     {hasAnyPermission(['units-data']) && (
                         <SidebarMenuItem>
-                            <SidebarMenuButton asChild tooltip={"Satuan"}>
-                                <Link href='' onClick={() => setOpenMobile(false)}>
+                            <SidebarMenuButton asChild tooltip={"Satuan"} isActive={url.startsWith('/apps/units')}>
+                                <Link href={route('apps.units.index')} onClick={() => setOpenMobile(false)}>
                                     <Box />
                                     <span>Satuan</span>
                                 </Link>

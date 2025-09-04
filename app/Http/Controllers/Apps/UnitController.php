@@ -81,6 +81,8 @@ class UnitController extends Controller implements HasMiddleware
             'name' => $request->name,
             'description' => $request->description
         ]);
+
+        return to_route('apps.units.index');
     }
 
     /**

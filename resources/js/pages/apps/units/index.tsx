@@ -66,30 +66,30 @@ export default function Index() {
                                     <TableHead>Deskripsi</TableHead>
                                     <TableHead className="w-[10px]">Aksi</TableHead>
                                 </TableRow>
-                                <TableBody>
-                                    {units.data.length === 0 ? (
-                                        <TableEmpty className="text-center" colSpan={4} message="Data Satuan" />
-                                    ) : (
-                                        units.data.map((unit, index) => (
-                                            <TableRow key={unit.id}>
-                                                <TableCell className="text-center">{++index + + (units.current_page - 1) * units.per_page}</TableCell>
-                                                <TableCell>{unit.name}</TableCell>
-                                                <TableCell>{unit.description}</TableCell>
-                                                <TableCell className="text-center">
-                                                    {(hasAnyPermission(['units-update']) || hasAnyPermission(['units-delete'])) &&
-                                                        <ActionButton
-                                                            permissionPrefix="units"
-                                                            isModal={false}
-                                                            actionDelete={() => handleModalDelete(unit)}
-                                                            actionEditHref={route('apps.units.edit', unit.id)}
-                                                        />
-                                                    }
-                                                </TableCell>
-                                            </TableRow>
-                                        ))
-                                    )}
-                                </TableBody>
                             </TableHeader>
+                            <TableBody>
+                                {units.data.length === 0 ? (
+                                    <TableEmpty colSpan={4} message="Data Satuan" />
+                                ) : (
+                                    units.data.map((unit, index) => (
+                                        <TableRow key={unit.id}>
+                                            <TableCell className="text-center">{++index + + (units.current_page - 1) * units.per_page}</TableCell>
+                                            <TableCell>{unit.name}</TableCell>
+                                            <TableCell>{unit.description}</TableCell>
+                                            <TableCell className="text-center">
+                                                {(hasAnyPermission(['units-update']) || hasAnyPermission(['units-delete'])) &&
+                                                    <ActionButton
+                                                        permissionPrefix="units"
+                                                        isModal={false}
+                                                        actionDelete={() => handleModalDelete(unit)}
+                                                        actionEditHref={route('apps.units.edit', unit.id)}
+                                                    />
+                                                }
+                                            </TableCell>
+                                        </TableRow>
+                                    ))
+                                )}
+                            </TableBody>
                         </Table>
                     </TableCard>
                     <ModalDelete open={modalDelete} onOpenChange={setModalDelete} url={route('apps.units.destroy', data.id)} />

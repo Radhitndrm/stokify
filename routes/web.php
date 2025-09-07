@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Apps\CategoryController;
 use App\Http\Controllers\Apps\DashboardController;
 use App\Http\Controllers\Apps\PermissionController;
 use App\Http\Controllers\Apps\RoleController;
@@ -25,6 +26,8 @@ Route::group(['prefix' => 'apps', 'as' => 'apps.', 'middleware' => ['auth']], fu
     Route::resource('users', UserController::class);
 
     Route::resource('units', UnitController::class)->except('show');
+
+    Route::resource('categories', CategoryController::class)->except('show');
 });
 
 

@@ -42,7 +42,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return inertia('apps/catagories/create');
+        return inertia('apps/categories/create');
     }
 
     /**

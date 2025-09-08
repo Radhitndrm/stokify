@@ -39,8 +39,8 @@ export function SideMaster({ url, setOpenMobile }: sideMasterProps) {
                     )}
                     {hasAnyPermission(['supplier-data']) && (
                         <SidebarMenuItem>
-                            <SidebarMenuButton asChild tooltip={"Supplier"}>
-                                <Link href='' onClick={() => setOpenMobile(false)}>
+                            <SidebarMenuButton asChild tooltip={"Supplier"} isActive={url.startsWith('/apps/suppliers')}>
+                                <Link href={route('apps.suppliers.index')} onClick={() => setOpenMobile(false)}>
                                     <NotebookPen />
                                     <span>Supplier</span>
                                 </Link>

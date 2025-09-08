@@ -60,7 +60,7 @@ class RoleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(RoleRequest $request)
     {
         $role = Role::create(['name' => $request->name]);
 

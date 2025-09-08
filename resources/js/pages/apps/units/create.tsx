@@ -48,10 +48,12 @@ export default function Create() {
                                     <div className="mb-4 flex flex-col gap-2">
                                         <Label>Nama Satuan <span className='text-rose-500'>*</span></Label>
                                         <Input type='text' value={data.name} onChange={(e) => setData('name', e.target.value)} placeholder='Masukan nama satuan'></Input>
+                                        <p className='text-red-500 text-xs'>{errors.name}</p>
                                     </div>
                                     <div className="mb-4 flex flex-col gap-2">
                                         <Label>Deskripsi Satuan</Label>
                                         <Textarea value={data.description} onChange={(e) => setData('description', e.target.value)} placeholder='Masukan deskripsi satuan' />
+                                        <p className='text-red-500 text-xs'>{errors.description}</p>
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <Button variant="danger" asChild>

@@ -8,6 +8,7 @@ use App\Http\Controllers\Apps\UnitController;
 use App\Http\Controllers\Apps\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Apps\SupplierController;
 
 Route::get('/', function () {
     if (Auth::check())
@@ -28,6 +29,9 @@ Route::group(['prefix' => 'apps', 'as' => 'apps.', 'middleware' => ['auth']], fu
     Route::resource('units', UnitController::class)->except('show');
 
     Route::resource('categories', CategoryController::class)->except('show');
+
+    Route::get('/suppliers/{supplier}/get-orders', [SupplierController::class, 'getOrders'])->name('suppliers.get-orders');
+    Route::resource('suppliers', SupplierController::class)->except(['show']);
 });
 
 

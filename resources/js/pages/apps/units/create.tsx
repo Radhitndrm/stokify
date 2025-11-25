@@ -47,7 +47,7 @@ export default function Create() {
                                 <form onSubmit={storeData}>
                                     <div className="mb-4 flex flex-col gap-2">
                                         <Label>Nama Satuan <span className='text-rose-500'>*</span></Label>
-                                        <Input type='text' value={data.name} onChange={(e) => setData('name', e.target.value)} placeholder='Masukan nama satuan'></Input>
+                                        <Input type='text' value={data.name} onChange={(e) => setData('name', e.target.value)} placeholder='Masukan nama satuan' />
                                         <p className='text-red-500 text-xs'>{errors.name}</p>
                                     </div>
                                     <div className="mb-4 flex flex-col gap-2">
